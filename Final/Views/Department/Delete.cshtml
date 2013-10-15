@@ -3,23 +3,18 @@
 @{
     ViewBag.Title = "Delete";
 }
-<!--
+
 </br>
 </br>
 </br>
-</br>
-</br>
-</br>
-    -->
 
 
- <!--<div align="center" class="well offset3 span5">-->
+ <div align="center" class="well offset3 span5">
 <fieldset>
     <legend><h2>You Sure?</h2></legend>
-    <br />
+
     <div class="display-label">
-         <!--@Html.DisplayNameFor(model => model.D_Name)-->
-        <b>Name:</b>
+         <b>Name:</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.D_Name)
@@ -28,8 +23,8 @@
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <br />
-        <input type="submit" value="Delete" class="btn btn-mini btn-danger" /> |
-         @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
+        <input type="submit" value="Delete" class="btn btn-mini btn-danger"/> |
+        @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
     </p>
 }
+     </div>

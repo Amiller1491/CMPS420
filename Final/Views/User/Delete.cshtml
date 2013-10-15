@@ -7,15 +7,11 @@
 </br>
 </br>
 </br>
-</br>
-</br>
-</br>
 
 
  <div align="center" class="well offset3 span5">
 <fieldset>
     <legend><h2>You Sure?</h2></legend>
-    <br />
     <div class="display-label">
          <!--<b>@Html.DisplayNameFor(model => model.FirstName):</b>-->
         <b>First Name:</b>
@@ -23,7 +19,6 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.FirstName)
     </div>
-    <br />
 
     <div class="display-label">
         <!--<b> @Html.DisplayNameFor(model => model.LastName):</b>-->
@@ -32,7 +27,6 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.LastName)
     </div>
-    <br />
 
     <div class="display-label">
         <!--<b> @Html.DisplayNameFor(model => model.Email):</b>-->
@@ -41,7 +35,6 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Email)
     </div>
-    <br />
 
     <div class="display-label">
         <!-- <b>@Html.DisplayNameFor(model => model.Phone):</b>-->
@@ -50,7 +43,6 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Phone)
     </div>
-    <br />
 
     <div class="display-label">
          <!--<b> @Html.DisplayNameFor(model => model.RoleModel.Name): </b>-->
@@ -65,8 +57,8 @@
     @Html.AntiForgeryToken()
 
         <p>
-        <br />
         <input type="submit" value="Delete" class="btn btn-mini btn-danger" /> |
          @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
     </p>
 }
+     </div>

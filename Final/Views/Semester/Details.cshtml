@@ -4,26 +4,29 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+</br>
+</br>
+</br>
+
+<div align="center" class="well offset3 span5">
 
 <fieldset>
-    <legend>SemesterModel</legend>
-
+    <legend><h2>Semester Details</h2></legend>
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SemName)
+         @Html.DisplayNameFor(model => model.Name)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SemName)
+        @Html.DisplayFor(model => model.Name)
     </div>
 
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.SemYear)
+         @Html.DisplayNameFor(model => model.Year)
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SemYear)
+        @Html.DisplayFor(model => model.Year)
     </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Term_ID }) |
+        @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
+    </p>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.SemID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

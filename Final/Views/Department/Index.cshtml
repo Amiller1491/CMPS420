@@ -1,11 +1,5 @@
 ﻿@model IEnumerable<Final.Models.DepartmentModel>
 
-
-@{
-    ViewBag.Title = "Index";
-}
-
-
 <h2>Departments</h2>
 @*<button id="addButton" class="btn btn-primary"><i class="icon-plus"> </i> </button>*@
 
@@ -21,7 +15,7 @@
         <th>
             @Html.DisplayNameFor(model => model.D_Name)
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -37,4 +31,3 @@
 }
 
 </table>
-

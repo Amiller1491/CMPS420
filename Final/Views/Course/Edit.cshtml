@@ -4,41 +4,98 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+</br>
+</br>
+</br>
+
+<div align="center" class="well offset3 span5">
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>CourseModel</legend>
-
-        @Html.HiddenFor(model => model.C_Num)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.C_Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.C_Name)
-            @Html.ValidationMessageFor(model => model.C_Name)
-        </div>
+     
+<fieldset>
+    <legend><h2>Edit Course</h2></legend>
+        @Html.HiddenFor(model => model.Class_Nbr)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.C_Section)
+            @Html.LabelFor(model => model.Subject)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.C_Section)
-            @Html.ValidationMessageFor(model => model.C_Section)
+            @Html.EditorFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
         </div>
 
-        <p>
-            <input type="submit" value="Save" />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Catalog_Nbr)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Catalog_Nbr)
+            @Html.ValidationMessageFor(model => model.Catalog_Nbr)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Section)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Section)
+            @Html.ValidationMessageFor(model => model.Section)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Enroll_Cap)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Enroll_Cap)
+            @Html.ValidationMessageFor(model => model.Enroll_Cap)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Total_Enroll)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Total_Enroll)
+            @Html.ValidationMessageFor(model => model.Total_Enroll)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Meeting_Pattern)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Meeting_Pattern)
+            @Html.ValidationMessageFor(model => model.Meeting_Pattern)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mtg_Start)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mtg_Start)
+            @Html.ValidationMessageFor(model => model.Mtg_Start)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mtg_End)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mtg_End)
+            @Html.ValidationMessageFor(model => model.Mtg_End)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLass_Stat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLass_Stat)
+            @Html.ValidationMessageFor(model => model.CLass_Stat)
+        </div>
+
+       <p>
+            <input class="btn btn-small btn-primary" type="submit" value="Save" /> |
+             @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
         </p>
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

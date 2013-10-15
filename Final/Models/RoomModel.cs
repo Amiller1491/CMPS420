@@ -13,7 +13,9 @@ namespace Final.Models
     public partial class RoomModel
     {
         [Key]
-        public int R_ID { get; set; }
-        public string R_Name { get; set; }
+        public int Room_ID { get; set; }
+        public string Facility_ID { get; set; }
+        public string Description { get; set; }
+        public int RoomCap { get; set; }
     }
 }

@@ -4,41 +4,44 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+</br>
+</br>
+</br>
+
+<div align="center" class="well offset3 span5">
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
+     
+<fieldset>
+    <legend><h2>Edit Teacher</h2></legend>
 
-    <fieldset>
-        <legend>TeacherModel</legend>
-
-        @Html.HiddenFor(model => model.T_ID)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.T_FName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.T_FName)
-            @Html.ValidationMessageFor(model => model.T_FName)
-        </div>
+        @Html.HiddenFor(model => model.Instructor_ID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.T_LName)
+            @Html.LabelFor(model => model.Instructor_FName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.T_LName)
-            @Html.ValidationMessageFor(model => model.T_LName)
+            @Html.EditorFor(model => model.Instructor_FName)
+            @Html.ValidationMessageFor(model => model.Instructor_FName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Instructor_LName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Instructor_LName)
+            @Html.ValidationMessageFor(model => model.Instructor_LName)
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input class="btn btn-small btn-primary" type="submit" value="Save" /> |
+             @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
         </p>
+     
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -4,10 +4,13 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+</br>
+</br>
+</br>
 
+ <div align="center" class="well offset3 span5">
 <fieldset>
-    <legend>UserModel</legend>
+    <legend><h2>UserModel</h2></legend>
 
     <div class="display-label">
          @Html.DisplayNameFor(model => model.FirstName)
@@ -52,5 +55,6 @@
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.UserID }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.UserID }, new { @class="btn btn-mini"}) |
+     @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
 </p>

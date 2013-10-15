@@ -1,0 +1,22 @@
+﻿@model Final.Models.DepartmentModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DepartmentModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.D_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.D_Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.D_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

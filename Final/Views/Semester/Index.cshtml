@@ -1,11 +1,8 @@
 ﻿@model IEnumerable<Final.Models.SemesterModel>
 
-@{
-    ViewBag.Title = "Index";
-}
-
 <h2>Semesters</h2>
 @*<button id="addButton" class="btn btn-primary"><i class="icon-plus"> </i> </button>*@
+
 
 @if(User.IsInRole("Head")){
 <p>
@@ -14,29 +11,29 @@
 </p>
 }
 
-<table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered">
+<table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered" >
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.SemName)
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SemYear)
+            @Html.DisplayNameFor(model => model.Year)
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SemName)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SemYear)
+            @Html.DisplayFor(modelItem => item.Year)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SemID }, new { @class="btn btn-mini"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.SemID }, new { @class="btn btn-mini"}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SemID }, new { @class="btn btn-mini btn-danger"})
+            @Html.ActionLink("Edit", "Edit", new { id=item.Term_ID }, new { @class="btn btn-mini"}) |
+            @Html.ActionLink("Details", "Details", new { id=item.Term_ID }, new { @class="btn btn-mini"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Term_ID }, new { @class="btn btn-mini btn-danger"})
         </td>
     </tr>
 }

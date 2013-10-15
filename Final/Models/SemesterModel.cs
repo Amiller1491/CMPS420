@@ -13,9 +13,9 @@ namespace Final.Models
     public partial class SemesterModel
     {
         [Key]
-        public int SemID { get; set; }
-        public string SemName { get; set; }
-        public int SemYear { get; set; }
+        public int Term_ID { get; set; }
+        public string Name { get; set; }
+        public int Year { get; set; }
 
         public virtual ICollection<CourseModel> CourseModels { get; set; }
     }

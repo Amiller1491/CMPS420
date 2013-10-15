@@ -1,86 +1,78 @@
 ﻿@model Final.Models.CourseModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-</br>
-</br>
-</br>
+<h2>Details</h2>
 
-
- <div align="center" class="well offset3 span5">
 <fieldset>
-    <legend><h2>You Sure?</h2></legend>
+    <legend>CourseModel</legend>
 
     <div class="display-label">
-         <b>Subject:</b>
+         @Html.DisplayNameFor(model => model.Subject)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Subject)
     </div>
 
     <div class="display-label">
-         <b>Catalog Nbr:</b>
+         @Html.DisplayNameFor(model => model.Catalog_Nbr)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Catalog_Nbr)
     </div>
 
     <div class="display-label">
-         <b>Section:</b>
+         @Html.DisplayNameFor(model => model.Section)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Section)
     </div>
 
     <div class="display-label">
-         <b>Enroll Cap:</b>
+         @Html.DisplayNameFor(model => model.Enroll_Cap)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Enroll_Cap)
     </div>
 
     <div class="display-label">
-         <b>Total Enrolled:</b>
+         @Html.DisplayNameFor(model => model.Total_Enroll)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Total_Enroll)
     </div>
 
     <div class="display-label">
-         <b>Meeting Pattern:</b>
+         @Html.DisplayNameFor(model => model.Meeting_Pattern)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Meeting_Pattern)
     </div>
 
     <div class="display-label">
-         <b>Start:</b>
+         @Html.DisplayNameFor(model => model.Mtg_Start)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Mtg_Start)
     </div>
 
     <div class="display-label">
-         <b>End:</b>
+         @Html.DisplayNameFor(model => model.Mtg_End)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Mtg_End)
     </div>
 
     <div class="display-label">
-         <b>Class Stat:</b>
+         @Html.DisplayNameFor(model => model.CLass_Stat)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.CLass_Stat)
     </div>
-    <br />
 </fieldset>
-@using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" class="btn btn-mini btn-danger"/> |
-        @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
-    </p>
-}
-     </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Class_Nbr }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

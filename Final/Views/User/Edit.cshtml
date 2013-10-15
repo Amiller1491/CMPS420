@@ -4,17 +4,18 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+</br>
+</br>
+</br>
+
+<div align="center" class="well offset3 span5">
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
-    
-    
-
-    <fieldset>
-        <legend></legend>
+     
+<fieldset>
+    <legend><h2>Edit User</h2></legend>
 
         <div>
 
@@ -71,10 +72,12 @@
         </div>
 
         <p>
-            <input class="btn btn-small btn-primary" type="submit" value="Save" />
+            <input class="btn btn-small btn-primary" type="submit" value="Save" /> |
+             @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
         </p>
     </fieldset>
 }
+    </div>
 
 
 

@@ -13,8 +13,8 @@ namespace Final.Models
     public partial class TeacherModel
     {
         [Key]
-        public int T_ID { get; set; }
-        public string T_FName { get; set; }
-        public string T_LName { get; set; }
+        public int Instructor_ID { get; set; }
+        public string Instructor_FName { get; set; }
+        public string Instructor_LName { get; set; }
     }
 }

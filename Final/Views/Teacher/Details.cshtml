@@ -1,0 +1,29 @@
+﻿@model Final.Models.TeacherModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TeacherModel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Instructor_FName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Instructor_FName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Instructor_LName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Instructor_LName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Instructor_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

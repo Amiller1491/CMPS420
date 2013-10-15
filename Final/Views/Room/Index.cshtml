@@ -1,11 +1,8 @@
 ﻿@model IEnumerable<Final.Models.RoomModel>
 
-@{
-    ViewBag.Title = "Index";
-}
-
 <h2>Rooms</h2>
 @*<button id="addButton" class="btn btn-primary"><i class="icon-plus"> </i> </button>*@
+
 
 @if(User.IsInRole("Head")){
 <p>
@@ -17,19 +14,31 @@
 <table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.R_Name)
+            @Html.DisplayNameFor(model => model.Facility_ID)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomCap)
+        </th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.R_Name)
+            @Html.DisplayFor(modelItem => item.Facility_ID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.R_ID }, new { @class="btn btn-mini"}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.R_ID }, new { @class="btn btn-mini btn-danger"})
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomCap)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Room_ID }, new { @class="btn btn-mini"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Room_ID }, new { @class="btn btn-mini btn-danger"})
         </td>
     </tr>
 }

@@ -1,44 +1,36 @@
 ﻿@model Final.Models.RoomModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-</br>
-</br>
-</br>
+<h2>Details</h2>
 
-
- <div align="center" class="well offset3 span5">
 <fieldset>
-    <legend><h2>You Sure?</h2></legend>
+    <legend>RoomModel</legend>
 
     <div class="display-label">
-         <b>Facility ID:</b>
+         @Html.DisplayNameFor(model => model.Facility_ID)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Facility_ID)
     </div>
 
     <div class="display-label">
-         <b>Description:</b>
+         @Html.DisplayNameFor(model => model.Description)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
 
     <div class="display-label">
-         <b>Room Cap:</b>
+         @Html.DisplayNameFor(model => model.RoomCap)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.RoomCap)
     </div>
-    <br />
 </fieldset>
-@using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" class="btn btn-mini btn-danger"/> |
-        @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
-    </p>
-}
-     </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Room_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

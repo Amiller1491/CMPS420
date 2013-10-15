@@ -153,6 +153,10 @@
     <Compile Include="Migrations\201310081706526_autoinitmigration.Designer.cs">
       <DependentUpon>201310081706526_autoinitmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310150402233_10.14.13.cs" />
+    <Compile Include="Migrations\201310150402233_10.14.13.Designer.cs">
+      <DependentUpon>201310150402233_10.14.13.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs">
       <SubType>Code</SubType>
@@ -170,6 +174,7 @@
     <Compile Include="Models\StatusModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Models\TestCaseModel.cs" />
+    <Compile Include="Models\TimeModel.cs" />
     <Compile Include="Models\UATModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -594,24 +599,28 @@
     <Content Include="Views\UAT\ViewTestCases.cshtml" />
     <Content Include="Views\TestCase\ClientEdit.cshtml" />
     <Content Include="Views\TestCase\TestCaseEditPartial.cshtml" />
-    <Content Include="Views\Teacher\Index.cshtml" />
-    <Content Include="Views\Teacher\Create.cshtml" />
-    <Content Include="Views\Teacher\Edit.cshtml" />
-    <Content Include="Views\Teacher\Delete.cshtml" />
-    <Content Include="Views\Semester\Index.cshtml" />
-    <Content Include="Views\Semester\Details.cshtml" />
-    <Content Include="Views\Semester\Create.cshtml" />
-    <Content Include="Views\Semester\Edit.cshtml" />
-    <Content Include="Views\Semester\Delete.cshtml" />
-    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Edit.cshtml" />
     <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Semester\Create.cshtml" />
+    <Content Include="Views\Semester\Edit.cshtml" />
+    <Content Include="Views\Semester\Delete.cshtml" />
+    <Content Include="Views\Teacher\Details.cshtml" />
+    <Content Include="Views\Teacher\Create.cshtml" />
+    <Content Include="Views\Teacher\Edit.cshtml" />
+    <Content Include="Views\Teacher\Delete.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Semester\Index.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Semester\Details.cshtml" />
+    <Content Include="Views\Room\Details.cshtml" />
     <Content Include="Views\Room\Create.cshtml" />
     <Content Include="Views\Room\Edit.cshtml" />
     <Content Include="Views\Room\Delete.cshtml" />
-    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\Details.cshtml" />
     <Content Include="Views\Department\Create.cshtml" />
     <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\Delete.cshtml" />
@@ -636,6 +645,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201310081706526_autoinitmigration.resx">
       <DependentUpon>201310081706526_autoinitmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310150402233_10.14.13.resx">
+      <DependentUpon>201310150402233_10.14.13.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

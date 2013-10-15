@@ -4,39 +4,99 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+</br>
+</br>
+</br>
+
+<div align="center" class="well offset3 span5">
 
 @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>CourseModel</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.C_Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.C_Name)
-            @Html.ValidationMessageFor(model => model.C_Name)
-        </div>
+     
+<fieldset>
+    <legend><h2>New Course</h2></legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.C_Section)
+            @Html.LabelFor(model => model.Subject)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.C_Section)
-            @Html.ValidationMessageFor(model => model.C_Section)
+            @Html.EditorFor(model => model.Subject)
+            @Html.ValidationMessageFor(model => model.Subject)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Catalog_Nbr)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Catalog_Nbr)
+            @Html.ValidationMessageFor(model => model.Catalog_Nbr)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Section)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Section)
+            @Html.ValidationMessageFor(model => model.Section)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Enroll_Cap)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Enroll_Cap)
+            @Html.ValidationMessageFor(model => model.Enroll_Cap)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Total_Enroll)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Total_Enroll)
+            @Html.ValidationMessageFor(model => model.Total_Enroll)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Meeting_Pattern)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Meeting_Pattern)
+            @Html.ValidationMessageFor(model => model.Meeting_Pattern)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mtg_Start)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mtg_Start)
+            @Html.ValidationMessageFor(model => model.Mtg_Start)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mtg_End)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mtg_End)
+            @Html.ValidationMessageFor(model => model.Mtg_End)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLass_Stat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CLass_Stat)
+            @Html.ValidationMessageFor(model => model.CLass_Stat)
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+           <input type="submit" class="btn btn-small btn-primary" value="Add" /> |
+             @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
         </p>
     </fieldset>
 }
+    </div>
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

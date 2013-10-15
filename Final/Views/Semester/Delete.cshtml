@@ -7,38 +7,30 @@
 </br>
 </br>
 </br>
-</br>
-</br>
-</br>
 
 
  <div align="center" class="well offset3 span5">
 <fieldset>
     <legend><h2>You Sure?</h2></legend>
-    <br />
     <div class="display-label">
-         <!--@Html.DisplayNameFor(model => model.SemName)-->
-        <b>Name:</b>
+         <b>Name:</b>
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SemName)
+        @Html.DisplayFor(model => model.Name)
     </div>
-    <br />
 
     <div class="display-label">
-         <!--@Html.DisplayNameFor(model => model.SemYear)-->
-        <b>Year</b>
+         <b>Year:</b>
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.SemYear)
+        @Html.DisplayFor(model => model.Year)
     </div>
     <br />
-
 </fieldset>
 @using (Html.BeginForm()) {
     <p>
-        <br />
-        <input type="submit" value="Delete" class="btn btn-mini btn-danger" /> |
-         @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
+        <input type="submit" value="Delete" class="btn btn-mini btn-danger"/> |
+       @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
     </p>
 }
+     </div>

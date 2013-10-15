@@ -1,10 +1,6 @@
 ﻿@model IEnumerable<Final.Models.CourseModel>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Courses</h2>
+<h2>Course</h2>
 @*<button id="addButton" class="btn btn-primary"><i class="icon-plus"> </i> </button>*@
 
 @if(User.IsInRole("Head")){
@@ -17,25 +13,67 @@
 <table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.C_Name)
+            @Html.DisplayNameFor(model => model.Subject)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.C_Section)
+            @Html.DisplayNameFor(model => model.Catalog_Nbr)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Section)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enroll_Cap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_Enroll)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meeting_Pattern)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mtg_Start)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mtg_End)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLass_Stat)
+        </th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.C_Name)
+            @Html.DisplayFor(modelItem => item.Subject)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.C_Section)
+            @Html.DisplayFor(modelItem => item.Catalog_Nbr)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.C_Num }, new { @class="btn btn-mini"}) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.C_Num }, new { @class="btn btn-mini btn-danger"})
+            @Html.DisplayFor(modelItem => item.Section)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Enroll_Cap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_Enroll)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Meeting_Pattern)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mtg_Start)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mtg_End)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLass_Stat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Class_Nbr }, new { @class="btn btn-mini"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Class_Nbr }, new { @class="btn btn-mini btn-danger"})
         </td>
     </tr>
 }

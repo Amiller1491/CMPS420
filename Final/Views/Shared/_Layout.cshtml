@@ -4,7 +4,36 @@
 <head>
     @Scripts.Render("~/bundles/jquery")
 
-    
+    <style media="screen" type="text/css">
+
+        /* styles for layout */
+        html,body
+        {
+            height:100%;
+        }
+ 
+        #wrap
+        {
+          min-height: 100%;  
+        }
+ 
+        #main
+        {
+            overflow:auto;
+            padding-bottom:150px; /* this needs to be bigger than footer height*/
+        }
+ 
+        .footer 
+        {
+            position: relative;
+            margin-top: -150px; /* negative value of footer height */
+            height: 150px;
+            clear:both;
+            padding-top:20px;
+            color:#fff;
+        } 
+
+</style>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width. initial-scale=1.0" /> <!--the last was argument added -->
@@ -104,8 +133,8 @@
     <br />
 
     <div class="container">
-        @RenderBody()
-    </div> <!-- /container -->
+       
+   </div> <!-- /container -->
 
         <!-- le javascript
             =======================
@@ -118,8 +147,24 @@
    
 </body>
 
+    <div id="wrap">
+<div id="main" class="container clear-top">
+    <div class="row"> 
+        <div class="span12">
+            @RenderBody()        
+        </div>
+    </div>
+</div>
+</div>
+    
     
     
 </html>
 
-
+<hr />
+    <footer class="footer-wrapper" style="text-align:center"">
+    <p>Adam Miller | Chet Young | David Lucas | Britt Gautreaux | Scott Knight</p>
+      <p>Need Help? Email <a href="mailto:adam.miller-2@selu.edu">adam.miller-2@selu.edu</a> for Tech Support</p>
+      <p>© CMPS420 Fall 2013</p>
+        </br>
+</footer>
