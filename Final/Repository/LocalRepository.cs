@@ -13,7 +13,7 @@ namespace Final.Repository
 
         #region Variables
 
-        private UATContext entities = new UATContext();
+        private ScheduleContext entities = new ScheduleContext();
 
         private const string MissingRole = "Role does not exist";
         private const string MissingUser = "User does not exist";
@@ -47,7 +47,7 @@ namespace Final.Repository
 
         public LocalRepository()
         {
-            this.entities = new UATContext();
+            this.entities = new ScheduleContext();
         }
 
         #endregion
@@ -124,7 +124,7 @@ namespace Final.Repository
             if (!UserExists(user))
                 throw new ArgumentException(MissingUser);
 
-            return user.Role;
+            return user.RoleModel;
         }
 
         #endregion

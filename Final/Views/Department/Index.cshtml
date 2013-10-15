@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Final.Models.DepartmentModel>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Departments</h2>
+@*<button id="addButton" class="btn btn-primary"><i class="icon-plus"> </i> </button>*@
+
+@if(User.IsInRole("Head")){
+<p>
+   @* @Html.ActionLink("Add User", "Create",null, new { @class="btn-primary"})*@
+    <a class="btn btn-primary" href="~/Department/Create" ><i class="icon-plus"></i> Add Department</a>
+</p>
+}
+
+<table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.D_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.D_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.D_ID }, new { @class="btn btn-mini"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.D_ID }, new { @class="btn btn-mini btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>
+

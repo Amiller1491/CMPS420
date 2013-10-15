@@ -4,57 +4,69 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
-<h3>Are you sure you want to delete this?</h3>
+
+ <div align="center" class="well offset3 span5">
 <fieldset>
-    <legend></legend>
-
-        <div>
-
-</div>
-        <br />
-
+    <legend><h2>You Sure?</h2></legend>
+    <br />
     <div class="display-label">
-         <b>@Html.DisplayNameFor(model => model.FirstName):</b>
+         <!--<b>@Html.DisplayNameFor(model => model.FirstName):</b>-->
+        <b>First Name:</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.FirstName)
     </div>
+    <br />
 
     <div class="display-label">
-        <b> @Html.DisplayNameFor(model => model.LastName):</b>
+        <!--<b> @Html.DisplayNameFor(model => model.LastName):</b>-->
+        <b>Last Name:</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.LastName)
     </div>
+    <br />
 
     <div class="display-label">
-        <b> @Html.DisplayNameFor(model => model.Email):</b>
+        <!--<b> @Html.DisplayNameFor(model => model.Email):</b>-->
+        <b>Email:</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Email)
     </div>
+    <br />
 
     <div class="display-label">
-         <b>@Html.DisplayNameFor(model => model.Phone):</b>
+        <!-- <b>@Html.DisplayNameFor(model => model.Phone):</b>-->
+        <b>Phone:</b>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Phone)
     </div>
+    <br />
 
     <div class="display-label">
-         <b> @Html.DisplayNameFor(model => model.Role.Name): </b>
+         <!--<b> @Html.DisplayNameFor(model => model.RoleModel.Name): </b>-->
+        <b>Role:</b>
     </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Role.Name)
+        @Html.DisplayFor(model => model.RoleModel.Name)
     </div>
+    <br />
 </fieldset>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
 
         <p>
-            <br />
-        <input type="submit" class="btn btn-mini btn-danger" value="Delete" />
+        <br />
+        <input type="submit" value="Delete" class="btn btn-mini btn-danger" /> |
+         @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
     </p>
 }

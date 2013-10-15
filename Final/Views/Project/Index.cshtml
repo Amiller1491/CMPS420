@@ -2,7 +2,7 @@
 
 
 <h2>Projects</h2>
-@if(User.IsInRole("Admin")){
+@if(User.IsInRole("Head")){
 <p>
     @*@Html.ActionLink("Add Project", "Create",null, new { @class="btn btn-small btn-primary"})*@
     <a class="btn btn-primary" href="~/Project/Create" ><i class="icon-plus"></i> Add Project</a>
@@ -18,13 +18,13 @@
             Assigned to
         </th>
         <th>
-            @if(User.IsInRole("Admin")){
+            @if(User.IsInRole("Head")){
             <span> Actions</span>
             }
 
         </th>
     </tr>
-@if(User.IsInRole("Client")){
+@if(User.IsInRole("Coordinator")){
 foreach (var item in Model) {
     
     if(item.User.Email == User.Identity.Name){ 
@@ -38,7 +38,7 @@ foreach (var item in Model) {
         <td>
             @Html.ActionLink("View UATs", "ViewUATs", "Project", new { id=item.ProjectID },new { @class="btn btn-mini"})
             
-            @if(User.IsInRole("Admin")){
+            @if(User.IsInRole("Head")){
             @Html.Raw(" | ");
             @Html.ActionLink("Edit", "Edit", new { id=item.ProjectID },new { @class="btn btn-mini"}) @Html.Raw(" | ");
             @Html.ActionLink("Delete", "Delete", new { id=item.ProjectID },new { @class="btn btn-mini btn-danger"})
@@ -60,7 +60,7 @@ foreach (var item in Model) {
         <td>
             @Html.ActionLink("View UATs", "ViewUATs", "Project", new { id=item.ProjectID },new { @class="btn btn-mini"})
             
-            @if(User.IsInRole("Admin")){
+            @if(User.IsInRole("Head")){
             @Html.Raw(" | ");
             @Html.ActionLink("Edit", "Edit", new { id=item.ProjectID },new { @class="btn btn-mini"}) @Html.Raw(" | ");
             @Html.ActionLink("Delete", "Delete", new { id=item.ProjectID },new { @class="btn btn-mini btn-danger"})

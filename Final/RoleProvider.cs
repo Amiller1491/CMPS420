@@ -11,7 +11,7 @@ namespace Final
 
     public class MyRoleProvider : RoleProvider
     {
-        UATContext db = new UATContext();
+        ScheduleContext db = new ScheduleContext();
         public override void Initialize(string name, System.Collections.Specialized.NameValueCollection config)
         {
             base.Initialize(name, config);
@@ -71,13 +71,13 @@ namespace Final
             {
                 UserModel user = db.User.Single(x => x.Email == email);
                 string[] roles = new string[1];
-                if (user.Role == null)
+                if (user.RoleModel == null)
                 {
                     return roles;
                 }
                 else
                 {
-                    roles[0] = user.Role.Name;
+                    roles[0] = user.RoleModel.Name;
                     return roles;
                 }
             }
@@ -135,7 +135,7 @@ namespace Final
             {
                 UserModel user = db.User.Single(x => x.Email == email);
 
-                if (user.Role.Name == roleName)
+                if (user.RoleModel.Name == roleName)
                 {
                     return true;
                 }

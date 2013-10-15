@@ -3,6 +3,9 @@
 <html lang="en">
 <head>
     @Scripts.Render("~/bundles/jquery")
+
+    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width. initial-scale=1.0" /> <!--the last was argument added -->
     <title>@ViewBag.Title</title>
@@ -40,12 +43,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="~/Project/Index">User Acceptance Testing : Group II</a>
+          <a class="brand" href="~/Home/Index">Semester Scheduling :</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
 
              @* //this is how you filter the role in razor:RABIN
-                @if (User.IsInRole("Admin"))
+                @if (User.IsInRole("Head"))
               {
                   <strong> if you see me you are admin</strong>
               }*@
@@ -53,17 +56,33 @@
               
               @if (User.Identity.IsAuthenticated)
               {
-                  if (User.IsInRole("Admin"))
+                  if (User.IsInRole("Head"))
                   {
-                      <li><a class="hover" href="~/User/Index">User</a></li>
-                      <li><a class="hover" href="~/Project/Index">All Projects</a></li>  
-                      <li><a class="hover" href="~/UAT/Index">All UATs</a></li>     
-                      <li><a class="hover" href="~/TestCase/Index">All Test Cases</a></li>  
+                      <li><a class="hover" href="~/User/Index">Coordinators</a></li>
+                      <li><a class="hover" href="~/Department/Index">Departments</a></li>
+                      <li><a class="hover" href="~/Teacher/Index">Teachers</a></li>
+                      <li><a class="hover" href="~/Semester/Index">Semesters</a></li>
+                      <li><a class="hover" href="~/Course/Index">Courses</a></li>
+                      <li><a class="hover" href="~/Room/Index">Rooms</a></li>
+                      //<li><a class="hover" href="~/User/Index">Users</a></li>
+                      //<li><a class="hover" href="~/Project/Index">All Projects</a></li>  
+                      //<li><a class="hover" href="~/UAT/Index">All UATs</a></li>     
+                      //<li><a class="hover" href="~/TestCase/Index">All Test Cases</a></li>  
                     
                   }
-                  else
+                  else 
                   {
-                      <li><a class="hover" href="~/Project/Index"> Project</a></li>
+                      <li><a class="hover" href="~/Department/Index">Departments</a></li>
+                      <li><a class="hover" href="~/Teacher/Index">Teachers</a></li>
+                      <li><a class="hover" href="~/Semester/Index">Semesters</a></li>
+                      <li><a class="hover" href="~/Course/Index">Courses</a></li>
+                      <li><a class="hover" href="~/Room/Index">Rooms</a></li>
+                      //<li><a class="hover" href="~/User/Index">Users</a></li>
+                      //<li><a class="hover" href="~/Project/Index">All Projects</a></li>  
+                      //<li><a class="hover" href="~/UAT/Index">All UATs</a></li>     
+                      //<li><a class="hover" href="~/TestCase/Index">All Test Cases</a></li>  
+                    
+                      //<li><a class="hover" href="~/Project/Index"> Project</a></li>
                   }
               
               }
@@ -98,6 +117,9 @@
 
    
 </body>
+
+    
     
 </html>
+
 

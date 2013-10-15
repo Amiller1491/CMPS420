@@ -14,14 +14,14 @@ namespace Final.Controllers
     [Authorize]
     public class UATController : Controller
     {
-        private UATContext db = new UATContext();
+        private ScheduleContext db = new ScheduleContext();
 
         //
         // GET: /UAT/
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Index()
         {
-            var uat = db.UAT.Include(u => u.Project).Include(u => u.Status);
+            var uat = db.UAT.Include(u => u.ProjectModel).Include(u => u.StatusModel);
             return View(uat.ToList());
         }
 
@@ -29,7 +29,7 @@ namespace Final.Controllers
         {
             UATModel uatmodel = db.UAT.Find(id);
             //so when client views testcase and if test case is "in progress" it wil change it to "Viewed" :Rabin
-            if (User.IsInRole("Client"))
+            if (User.IsInRole("Coordinator"))
             {
                 if (uatmodel.StatusD == 5 || uatmodel.StatusD == 1)
                 {
@@ -39,11 +39,11 @@ namespace Final.Controllers
                 }
             }
             
-            var testcase = uatmodel.TestCase.ToList();
+            var testcase = uatmodel.TestCaseModels.ToList();
             var preStatus = uatmodel.StatusD;
             checkUatStat(id);
             var afterStatus = uatmodel.StatusD;
-            if (User.IsInRole("Client")) {
+            if (User.IsInRole("Coordinator")) {
             if (preStatus != afterStatus)
             {
                 SendMail(uatmodel.UATID);
@@ -60,7 +60,7 @@ namespace Final.Controllers
 
         //
         // GET: /UAT/Details/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Details(int id = 0)
         {
             UATModel uatmodel = db.UAT.Find(id);
@@ -73,7 +73,7 @@ namespace Final.Controllers
 
         //
         // GET: /UAT/Create
-        [Authorize(Roles="Admin")]
+        [Authorize(Roles="Head")]
         public ActionResult Create()
         {
 
@@ -106,7 +106,7 @@ namespace Final.Controllers
 
         //
         // GET: /UAT/Edit/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Edit(int id = 0)
         {
             UATModel uatmodel = db.UAT.Find(id);
@@ -142,7 +142,7 @@ namespace Final.Controllers
 
         //
         // GET: /UAT/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Delete(int id = 0)
         {
             UATModel uatmodel = db.UAT.Find(id);
@@ -179,7 +179,7 @@ namespace Final.Controllers
             int count = 0;
             int state = 1;
             UATModel uatmodel = db.UAT.Find(id);
-            var testcase = uatmodel.TestCase.ToList();
+            var testcase = uatmodel.TestCaseModels.ToList();
             int temp = testcase.Count();
             foreach (var item in testcase)
             {
@@ -210,7 +210,7 @@ namespace Final.Controllers
                 uatmodel.StatusD = 4;
                 
             }
-            //if (User.IsInRole("Client"))
+            //if (User.IsInRole("Coordinator"))
             //{
                 //SendMail();
             //}
@@ -223,7 +223,7 @@ namespace Final.Controllers
         {
             EmailModel mail = new EmailModel();
             UATModel uatmodel = db.UAT.Find(id);
-            int u_id = uatmodel.Project.UserID;
+            int u_id = uatmodel.ProjectModel.UserID;
             
             UserModel usermodel = db.User.Find(u_id);
          
@@ -241,7 +241,7 @@ namespace Final.Controllers
                     message.To.Add(new MailAddress("lanceugalde@gmail.com"));
                     message.Subject = mail.Mail_Subject;
                     var statusId = uatmodel.StatusD;
-                    var statusName = uatmodel.Status.StatusType;
+                    var statusName = uatmodel.StatusModel.StatusType;
                     //message.Body = mail.Mail_Contents;
                     message.Body = "Hello Admin, \n\n" + username + ", has changed UAT " + uatmodel.Name + "'s status to " + statusName + ". Please click here. http://localhost:1865/Project/ViewUATs/" + uatmodel.UATID + "  \n\n\n Do not reply on this email. This is only for notification purpose. Good Day!\n\n Sent at:" + DateTime.Now;
 

@@ -5,7 +5,7 @@
 }
 
 <h2>All UATs</h2>
-@if(User.IsInRole("Admin")){
+@if(User.IsInRole("Head")){
 <p>
    @* @Html.ActionLink("Add UAT", "Create",null, new { @class="btn btn-small btn-primary"})*@
     <a class="btn btn-primary" href="~/UAT/Create" ><i class="icon-plus"></i> Add UAT</a>
@@ -54,11 +54,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Status.StatusType)
         </td>
-        <td>@if(User.IsInRole("Admin")){
+        <td>@if(User.IsInRole("Head")){
             @Html.ActionLink("Edit", "Edit", new { id=item.UATID }, new { @class="btn btn-mini"})@Html.Raw(" | ");
             @Html.ActionLink("Delete", "Delete", new { id=item.UATID }, new { @class="btn btn-mini btn-danger"})
             }
-            @if(item.StatusD == 5 && User.IsInRole("Admin")){
+            @if(item.StatusD == 5 && User.IsInRole("Head")){
                 
             }
         </td>

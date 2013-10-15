@@ -4,8 +4,6 @@
 }
 </br>
 </br>
-</br>
-</br>
 
 
 
@@ -13,56 +11,69 @@
 
     @if(User.Identity.IsAuthenticated){
 
-
-             if (User.IsInRole("Admin")){
+            /*
+             if (User.IsInRole("Head")){
                  
                 <h1> Hello, @HttpContext.Current.User.Identity.Name</h1>     
-                <h2> You are an Admin</h2>
+                <h2> You are the Department Head</h2>
             }
-            if (User.IsInRole("Client")){
+            if (User.IsInRole("Coordinator")){
                 <h1> Hello, @HttpContext.Current.User.Identity.Name</h1>     
-                <h2> You are a Client</h2>
+                <h2> You are a Department Coordinator</h2>
             }
+              */
             
-
+            if (User.IsInRole("Head")){
+                 
+                <h1> Hello, @HttpContext.Current.User.Identity.Name</h1>     
+                <!--<h2> You are the Department Head</h2>-->
+            }
+            if (User.IsInRole("Coordinator")){
+                <h1> Hello, @HttpContext.Current.User.Identity.Name</h1>     
+                <!--<h2> You are a Coordinator</h2>-->
+            }
+            if (User.IsInRole("Assistant")){
+                <h1> Hello, @HttpContext.Current.User.Identity.Name</h1>     
+                <!--<h2> You are an Assistant</h2>-->
+            }
+             
+           
     
-
+            <!--
                 <br />
 
-              <p><b>Final Phase</b></p>
-                <p>Group II: Adam Miller, Rabin Pun, Lance Ugalde, Ghislaine Scheers</p>
+              
               <p>
                 <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-primary btn-large btn-success">
                   Log Out
                 </a>
               </p>
+                -->
         
     }
     
     @if(!User.Identity.IsAuthenticated){
     
 
-    <h1>Welcome! Please Log In</h1>
+    <h1>Welcome! Ready to Schedule?</h1>
         <br />
 
-    <p><b>Final Phase</b></p>
-    <p>Group II: Adam Miller, Rabin Pun, Lance Ugalde, Ghislaine Scheers</p>
-  <p>
-      <br />
-    <a href="~/Account/Login" class="btn btn-primary btn-large btn-success">
-      Log In
-    </a>
-  </p>
     }
 
 </div>
    
 <hr />
 <div class="footer-wrapper" style="text-align:center">
-					<footer>
-                        <p>© CMPS383 Spring 2013</p>
-					</footer>
-		    </div>
+					
+    <footer>
+    
+      <p>Adam Miller | Chet Young | David Lucas | Britt Gautreaux | Scott Knight</p>
+      <p>Need Help? Email <a href="mailto:adam.miller-2@selu.edu">adam.miller-2@selu.edu</a> for Tech Support</p>
+      <p>© CMPS420 Fall 2013</p>
+
+	</footer>
+                       
+</div>
 
 
 

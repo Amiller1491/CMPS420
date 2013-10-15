@@ -15,7 +15,7 @@
     break;
 }
 
-@if (User.IsInRole("Admin"))
+@if (User.IsInRole("Head"))
 {
 
 }
@@ -35,7 +35,7 @@
         <th>
             Status
         </th>
-        @if(User.IsInRole("Admin")){
+        @if(User.IsInRole("Head")){
 
         <th></th>
         }
@@ -70,13 +70,13 @@
             }
             
         </td>
-        @if(User.IsInRole("Client")){
+        @if(User.IsInRole("Coordinator")){
 
         }
         else{
         <td>
             @Html.ActionLink("View", "ClientEdit", "TestCase", new { id = item.TestCaseID }, new { @class = "btn btn-mini" }) 
-            @if (User.IsInRole("Admin"))
+            @if (User.IsInRole("Head"))
             {
             @Html.Raw(" | ");   
             @Html.ActionLink("Delete", "Delete", "TestCase", new { id = item.TestCaseID }, new { @class = "btn btn-mini btn-danger" })

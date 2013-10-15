@@ -18,7 +18,7 @@ namespace Final.Controllers
         //{
         //    return View();
         //}
-        UATContext db = new UATContext();
+        ScheduleContext db = new ScheduleContext();
 
         [HttpGet]
         [AllowAnonymous]
@@ -137,7 +137,7 @@ namespace Final.Controllers
             bool isValid = false;
             //var crytpo = new Crypto.HashPassword(password);
 
-            using (var db = new UATContext())
+            using (var db = new ScheduleContext())
             {
                 var user = db.User.FirstOrDefault(u => u.Email == email);
 

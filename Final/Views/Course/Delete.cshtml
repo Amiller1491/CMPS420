@@ -1,0 +1,45 @@
+﻿@model Final.Models.CourseModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+ <div align="center" class="well offset3 span5">
+<fieldset>
+    <legend><h2>You Sure?</h2></legend>
+    <br />
+    <div class="display-label">
+         <!--@Html.DisplayNameFor(model => model.C_Name) -->
+        <b>Name:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.C_Name)
+    </div>
+    <br />
+
+    <div class="display-label">
+         <!--@Html.DisplayNameFor(model => model.C_Section) -->
+        <b>Section:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.C_Section)
+    </div>
+    <br />
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <br />
+        <input type="submit" value="Delete" class="btn btn-mini btn-danger" /> |
+         @Html.ActionLink("Back", "Index", "", new { @class="btn btn-mini"})
+    </p>
+}
+     </div>
+
+

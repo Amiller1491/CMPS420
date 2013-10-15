@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Final.Models.ScheduleContextModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Final.Models.ScheduleContextModel.C__MigrationHistory" />
+    <EntitySet Name="CourseModels" EntityType="Final.Models.ScheduleContextModel.CourseModel" />
+    <EntitySet Name="DepartmentModels" EntityType="Final.Models.ScheduleContextModel.DepartmentModel" />
+    <EntitySet Name="ProjectModels" EntityType="Final.Models.ScheduleContextModel.ProjectModel" />
+    <EntitySet Name="RoleModels" EntityType="Final.Models.ScheduleContextModel.RoleModel" />
+    <EntitySet Name="RoomModels" EntityType="Final.Models.ScheduleContextModel.RoomModel" />
+    <EntitySet Name="StatusModels" EntityType="Final.Models.ScheduleContextModel.StatusModel" />
+    <EntitySet Name="TeacherModels" EntityType="Final.Models.ScheduleContextModel.TeacherModel" />
+    <EntitySet Name="TestCaseModels" EntityType="Final.Models.ScheduleContextModel.TestCaseModel" />
+    <EntitySet Name="UATModels" EntityType="Final.Models.ScheduleContextModel.UATModel" />
+    <EntitySet Name="UserModels" EntityType="Final.Models.ScheduleContextModel.UserModel" />
+    <AssociationSet Name="FK_dbo_ProjectModels_dbo_UserModels_UserID" Association="Final.Models.ScheduleContextModel.FK_dbo_ProjectModels_dbo_UserModels_UserID">
+      <End Role="UserModel" EntitySet="UserModels" />
+      <End Role="ProjectModel" EntitySet="ProjectModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UATModels_dbo_ProjectModels_ProjectID" Association="Final.Models.ScheduleContextModel.FK_dbo_UATModels_dbo_ProjectModels_ProjectID">
+      <End Role="ProjectModel" EntitySet="ProjectModels" />
+      <End Role="UATModel" EntitySet="UATModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserModels_dbo_RoleModels_RoleID" Association="Final.Models.ScheduleContextModel.FK_dbo_UserModels_dbo_RoleModels_RoleID">
+      <End Role="RoleModel" EntitySet="RoleModels" />
+      <End Role="UserModel" EntitySet="UserModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TestCaseModels_dbo_StatusModels_StatusD" Association="Final.Models.ScheduleContextModel.FK_dbo_TestCaseModels_dbo_StatusModels_StatusD">
+      <End Role="StatusModel" EntitySet="StatusModels" />
+      <End Role="TestCaseModel" EntitySet="TestCaseModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UATModels_dbo_StatusModels_StatusD" Association="Final.Models.ScheduleContextModel.FK_dbo_UATModels_dbo_StatusModels_StatusD">
+      <End Role="StatusModel" EntitySet="StatusModels" />
+      <End Role="UATModel" EntitySet="UATModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TestCaseModels_dbo_UATModels_UATID" Association="Final.Models.ScheduleContextModel.FK_dbo_TestCaseModels_dbo_UATModels_UATID">
+      <End Role="UATModel" EntitySet="UATModels" />
+      <End Role="TestCaseModel" EntitySet="TestCaseModels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="CourseModel">
+    <Key>
+      <PropertyRef Name="C_Num" />
+    </Key>
+    <Property Name="C_Num" Type="Int32" Nullable="false" />
+    <Property Name="C_Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="C_Section" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DepartmentModel">
+    <Key>
+      <PropertyRef Name="D_ID" />
+    </Key>
+    <Property Name="D_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="D_Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="ProjectModel">
+    <Key>
+      <PropertyRef Name="ProjectID" />
+    </Key>
+    <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="UserModel" Relationship="Final.Models.ScheduleContextModel.FK_dbo_ProjectModels_dbo_UserModels_UserID" FromRole="ProjectModel" ToRole="UserModel" />
+    <NavigationProperty Name="UATModels" Relationship="Final.Models.ScheduleContextModel.FK_dbo_UATModels_dbo_ProjectModels_ProjectID" FromRole="ProjectModel" ToRole="UATModel" />
+  </EntityType>
+  <EntityType Name="RoleModel">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="UserModels" Relationship="Final.Models.ScheduleContextModel.FK_dbo_UserModels_dbo_RoleModels_RoleID" FromRole="RoleModel" ToRole="UserModel" />
+  </EntityType>
+  <EntityType Name="RoomModel">
+    <Key>
+      <PropertyRef Name="R_ID" />
+    </Key>
+    <Property Name="R_ID" Type="Int32" Nullable="false" />
+    <Property Name="R_Name" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="StatusModel">
+    <Key>
+      <PropertyRef Name="StatusD" />
+    </Key>
+    <Property Name="StatusD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StatusType" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TestCaseModels" Relationship="Final.Models.ScheduleContextModel.FK_dbo_TestCaseModels_dbo_StatusModels_StatusD" FromRole="StatusModel" ToRole="TestCaseModel" />
+    <NavigationProperty Name="UATModels" Relationship="Final.Models.ScheduleContextModel.FK_dbo_UATModels_dbo_StatusModels_StatusD" FromRole="StatusModel" ToRole="UATModel" />
+  </EntityType>
+  <EntityType Name="TeacherModel">
+    <Key>
+      <PropertyRef Name="T_ID" />
+    </Key>
+    <Property Name="T_ID" Type="Int32" Nullable="false" />
+    <Property Name="T_FName" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="T_LName" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="TestCaseModel">
+    <Key>
+      <PropertyRef Name="TestCaseID" />
+    </Key>
+    <Property Name="TestCaseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Steps" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StatusD" Type="Int32" />
+    <Property Name="UATID" Type="Int32" />
+    <NavigationProperty Name="StatusModel" Relationship="Final.Models.ScheduleContextModel.FK_dbo_TestCaseModels_dbo_StatusModels_StatusD" FromRole="TestCaseModel" ToRole="StatusModel" />
+    <NavigationProperty Name="UATModel" Relationship="Final.Models.ScheduleContextModel.FK_dbo_TestCaseModels_dbo_UATModels_UATID" FromRole="TestCaseModel" ToRole="UATModel" />
+  </EntityType>
+  <EntityType Name="UATModel">
+    <Key>
+      <PropertyRef Name="UATID" />
+    </Key>
+    <Property Name="UATID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Version" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Intro" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Started" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProjectID" Type="Int32" Nullable="false" />
+    <Property Name="StatusD" Type="Int32" />
+    <NavigationProperty Name="ProjectModel" Relationship="Final.Models.ScheduleContextModel.FK_dbo_UATModels_dbo_ProjectModels_ProjectID" FromRole="UATModel" ToRole="ProjectModel" />
+    <NavigationProperty Name="StatusModel" Relationship="Final.Models.ScheduleContextModel.FK_dbo_UATModels_dbo_StatusModels_StatusD" FromRole="UATModel" ToRole="StatusModel" />
+    <NavigationProperty Name="TestCaseModels" Relationship="Final.Models.ScheduleContextModel.FK_dbo_TestCaseModels_dbo_UATModels_UATID" FromRole="UATModel" ToRole="TestCaseModel" />
+  </EntityType>
+  <EntityType Name="UserModel">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="RoleID" Type="Int32" />
+    <NavigationProperty Name="ProjectModels" Relationship="Final.Models.ScheduleContextModel.FK_dbo_ProjectModels_dbo_UserModels_UserID" FromRole="UserModel" ToRole="ProjectModel" />
+    <NavigationProperty Name="RoleModel" Relationship="Final.Models.ScheduleContextModel.FK_dbo_UserModels_dbo_RoleModels_RoleID" FromRole="UserModel" ToRole="RoleModel" />
+  </EntityType>
+  <Association Name="FK_dbo_ProjectModels_dbo_UserModels_UserID">
+    <End Role="UserModel" Type="Final.Models.ScheduleContextModel.UserModel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProjectModel" Type="Final.Models.ScheduleContextModel.ProjectModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserModel">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ProjectModel">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UATModels_dbo_ProjectModels_ProjectID">
+    <End Role="ProjectModel" Type="Final.Models.ScheduleContextModel.ProjectModel" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UATModel" Type="Final.Models.ScheduleContextModel.UATModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectModel">
+        <PropertyRef Name="ProjectID" />
+      </Principal>
+      <Dependent Role="UATModel">
+        <PropertyRef Name="ProjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserModels_dbo_RoleModels_RoleID">
+    <End Role="RoleModel" Type="Final.Models.ScheduleContextModel.RoleModel" Multiplicity="0..1" />
+    <End Role="UserModel" Type="Final.Models.ScheduleContextModel.UserModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleModel">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="UserModel">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TestCaseModels_dbo_StatusModels_StatusD">
+    <End Role="StatusModel" Type="Final.Models.ScheduleContextModel.StatusModel" Multiplicity="0..1" />
+    <End Role="TestCaseModel" Type="Final.Models.ScheduleContextModel.TestCaseModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusModel">
+        <PropertyRef Name="StatusD" />
+      </Principal>
+      <Dependent Role="TestCaseModel">
+        <PropertyRef Name="StatusD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UATModels_dbo_StatusModels_StatusD">
+    <End Role="StatusModel" Type="Final.Models.ScheduleContextModel.StatusModel" Multiplicity="0..1" />
+    <End Role="UATModel" Type="Final.Models.ScheduleContextModel.UATModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusModel">
+        <PropertyRef Name="StatusD" />
+      </Principal>
+      <Dependent Role="UATModel">
+        <PropertyRef Name="StatusD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TestCaseModels_dbo_UATModels_UATID">
+    <End Role="UATModel" Type="Final.Models.ScheduleContextModel.UATModel" Multiplicity="0..1" />
+    <End Role="TestCaseModel" Type="Final.Models.ScheduleContextModel.TestCaseModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UATModel">
+        <PropertyRef Name="UATID" />
+      </Principal>
+      <Dependent Role="TestCaseModel">
+        <PropertyRef Name="UATID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

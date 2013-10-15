@@ -1,0 +1,37 @@
+﻿@model Final.Models.DepartmentModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>DepartmentModel</legend>
+
+        @Html.HiddenFor(model => model.D_ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.D_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.D_Name)
+            @Html.ValidationMessageFor(model => model.D_Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

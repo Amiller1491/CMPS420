@@ -13,20 +13,20 @@ namespace Final.Controllers
     [Authorize]
     public class TestCaseController : Controller
     {
-        private UATContext db = new UATContext();
+        private ScheduleContext db = new ScheduleContext();
 
         //
         // GET: /TestCase/
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Index()
         {
-            var testcase = db.TestCase.Include(t => t.UAT).Include(t => t.Status);
+            var testcase = db.TestCase.Include(t => t.UATModel).Include(t => t.StatusModel);
             return View(testcase.ToList());
         }
 
         //
         // GET: /TestCase/Details/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Details(int id = 0)
         {
             TestCaseModel testcasemodel = db.TestCase.Find(id);
@@ -39,7 +39,7 @@ namespace Final.Controllers
 
         //
         // GET: /TestCase/Create
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Create()
         {
             ViewBag.UATID = new SelectList(db.UAT, "UATID", "Name");
@@ -49,7 +49,7 @@ namespace Final.Controllers
 
         //
         // POST: /TestCase/Create
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TestCaseModel testcasemodel)
@@ -121,10 +121,10 @@ namespace Final.Controllers
         {
             var nullprev = testcasemodel.StatusD;
            UATModel uat = db.UAT.Find(testcasemodel.UATID);
-           int u_id = uat.Project.UserID;
+           int u_id = uat.ProjectModel.UserID;
            UserModel usermodel = db.User.Find(u_id);
            
-           if(User.IsInRole("Client")){
+           if(User.IsInRole("Coordinator")){
                //SendMail(usermodel);
            }
 
@@ -189,7 +189,7 @@ namespace Final.Controllers
 
         //
         // GET: /TestCase/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Delete(int id = 0)
         {
             TestCaseModel testcasemodel = db.TestCase.Find(id);
@@ -202,7 +202,7 @@ namespace Final.Controllers
 
         //
         // POST: /TestCase/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FinalModelsScheduleContextModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.CourseModel">
+        <MappingFragment StoreEntitySet="CourseModel">
+          <ScalarProperty Name="C_Num" ColumnName="C_Num" />
+          <ScalarProperty Name="C_Name" ColumnName="C_Name" />
+          <ScalarProperty Name="C_Section" ColumnName="C_Section" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DepartmentModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.DepartmentModel">
+        <MappingFragment StoreEntitySet="DepartmentModel">
+          <ScalarProperty Name="D_ID" ColumnName="D_ID" />
+          <ScalarProperty Name="D_Name" ColumnName="D_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.ProjectModel">
+        <MappingFragment StoreEntitySet="ProjectModel">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.RoleModel">
+        <MappingFragment StoreEntitySet="RoleModel">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.RoomModel">
+        <MappingFragment StoreEntitySet="RoomModel">
+          <ScalarProperty Name="R_ID" ColumnName="R_ID" />
+          <ScalarProperty Name="R_Name" ColumnName="R_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.StatusModel">
+        <MappingFragment StoreEntitySet="StatusModel">
+          <ScalarProperty Name="StatusD" ColumnName="StatusD" />
+          <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TeacherModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.TeacherModel">
+        <MappingFragment StoreEntitySet="TeacherModel">
+          <ScalarProperty Name="T_ID" ColumnName="T_ID" />
+          <ScalarProperty Name="T_FName" ColumnName="T_FName" />
+          <ScalarProperty Name="T_LName" ColumnName="T_LName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestCaseModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.TestCaseModel">
+        <MappingFragment StoreEntitySet="TestCaseModel">
+          <ScalarProperty Name="TestCaseID" ColumnName="TestCaseID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Steps" ColumnName="Steps" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="StatusD" ColumnName="StatusD" />
+          <ScalarProperty Name="UATID" ColumnName="UATID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UATModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.UATModel">
+        <MappingFragment StoreEntitySet="UATModel">
+          <ScalarProperty Name="UATID" ColumnName="UATID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="Intro" ColumnName="Intro" />
+          <ScalarProperty Name="Started" ColumnName="Started" />
+          <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="StatusD" ColumnName="StatusD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserModels">
+      <EntityTypeMapping TypeName="Final.Models.ScheduleContextModel.UserModel">
+        <MappingFragment StoreEntitySet="UserModel">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

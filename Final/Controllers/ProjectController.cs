@@ -14,22 +14,23 @@ namespace Final.Controllers
     [Authorize]
     public class ProjectController : Controller
     {
-        private UATContext db = new UATContext();
+        private ScheduleContext db = new ScheduleContext();
 
         //
         // GET: /Project/
         [Authorize]
         public ActionResult Index()
         {
-            var project = db.Project.Include(p => p.User);
+            //var project = db.Project.Include(p => p.User);
 
-            return View(project.ToList());
+            //return View(project.ToList());
+            return Redirect("/Home/Index/");
         }
 
         public ActionResult ViewUATs(int id = 0)
         {
             ProjectModel projectmodel = db.Project.Find(id);
-            var uat = projectmodel.UAT.ToList();
+            var uat = projectmodel.UATModels.ToList();
             
             if (uat == null)
             {
@@ -40,7 +41,7 @@ namespace Final.Controllers
         }
         //
         // GET: /Project/Details/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Details(int id = 0)
         {
             ProjectModel projectmodel = db.Project.Find(id);
@@ -53,7 +54,7 @@ namespace Final.Controllers
 
         //
         // GET: /Project/Create
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Create()
         {
             ViewBag.UserID = new SelectList(db.User, "UserID", "FirstName");
@@ -80,7 +81,7 @@ namespace Final.Controllers
 
         //
         // GET: /Project/Edit/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Edit(int id = 0)
         {
             ProjectModel projectmodel = db.Project.Find(id);
@@ -111,7 +112,7 @@ namespace Final.Controllers
 
         //
         // GET: /Project/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Delete(int id = 0)
         {
             ProjectModel projectmodel = db.Project.Find(id);
@@ -146,7 +147,7 @@ namespace Final.Controllers
         {
 
             UATModel uatmodel = db.UAT.Find(id);
-            int u_id = uatmodel.Project.UserID;
+            int u_id = uatmodel.ProjectModel.UserID;
 
             UserModel usermodel = db.User.Find(u_id);
 

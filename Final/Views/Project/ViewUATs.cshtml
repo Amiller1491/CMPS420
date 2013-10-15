@@ -9,7 +9,7 @@
 {<h2>@Html.DisplayFor(modelItem => item.Project.Name) UATs</h2>
     break;
 }
-@if(User.IsInRole("Admin")){
+@if(User.IsInRole("Head")){
 <p>
     <a class="btn btn-primary" href="~/UAT/Create" ><i class="icon-plus"></i> Add UAT</a>
 </p>
@@ -76,11 +76,11 @@ foreach (var item in Model) {
         <td>
 
             @Html.ActionLink("View Test Cases", "ViewTestCases", "UAT", new {id=item.UATID}, new { @class="btn btn-mini"}) 
-            @if(User.IsInRole("Admin")){
+            @if(User.IsInRole("Head")){
             @Html.Raw(" | ");
             @Html.ActionLink("Edit", "Edit","UAT", new { id=item.UATID }, new { @class="btn btn-mini"}) @Html.Raw(" | ");
             @Html.ActionLink("Delete", "Delete","UAT", new { id=item.UATID }, new { @class="btn btn-mini btn-danger"})
-                if (item.StatusD == 5 && User.IsInRole("Admin"))
+                if (item.StatusD == 5 && User.IsInRole("Head"))
                 {
                     @Html.Raw(" | ");
                     @Html.ActionLink("Send Notification", "SendMail", new { id = item.UATID }, new { @class = "btn btn-mini btn-info" });

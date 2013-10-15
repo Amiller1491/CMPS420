@@ -48,6 +48,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -129,8 +131,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\SemesterController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Controllers\TestCaseController.cs" />
     <Compile Include="Controllers\UATController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -138,19 +145,32 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LocalRoleProvider.cs" />
-    <Compile Include="Migrations\201304182058524_s.cs" />
-    <Compile Include="Migrations\201304182058524_s.Designer.cs">
-      <DependentUpon>201304182058524_s.cs</DependentUpon>
+    <Compile Include="Migrations\201310080413104_10.7.13.cs" />
+    <Compile Include="Migrations\201310080413104_10.7.13.Designer.cs">
+      <DependentUpon>201310080413104_10.7.13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310081706526_autoinitmigration.cs" />
+    <Compile Include="Migrations\201310081706526_autoinitmigration.Designer.cs">
+      <DependentUpon>201310081706526_autoinitmigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\EmailModel.cs" />
+    <Compile Include="Models\AccountModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CourseModel.cs" />
+    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\EmailModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
+    <Compile Include="Models\ScheduleContext.cs" />
+    <Compile Include="Models\SemesterModel.cs" />
     <Compile Include="Models\StatusModel.cs" />
+    <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Models\TestCaseModel.cs" />
     <Compile Include="Models\UATModel.cs" />
-    <Compile Include="Models\UATContext.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\LocalRepository.cs" />
@@ -574,6 +594,27 @@
     <Content Include="Views\UAT\ViewTestCases.cshtml" />
     <Content Include="Views\TestCase\ClientEdit.cshtml" />
     <Content Include="Views\TestCase\TestCaseEditPartial.cshtml" />
+    <Content Include="Views\Teacher\Index.cshtml" />
+    <Content Include="Views\Teacher\Create.cshtml" />
+    <Content Include="Views\Teacher\Edit.cshtml" />
+    <Content Include="Views\Teacher\Delete.cshtml" />
+    <Content Include="Views\Semester\Index.cshtml" />
+    <Content Include="Views\Semester\Details.cshtml" />
+    <Content Include="Views\Semester\Create.cshtml" />
+    <Content Include="Views\Semester\Edit.cshtml" />
+    <Content Include="Views\Semester\Delete.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
+    <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Room\Create.cshtml" />
+    <Content Include="Views\Room\Edit.cshtml" />
+    <Content Include="Views\Room\Delete.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -587,8 +628,14 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201304182058524_s.resx">
-      <DependentUpon>201304182058524_s.cs</DependentUpon>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201310080413104_10.7.13.resx">
+      <DependentUpon>201310080413104_10.7.13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310081706526_autoinitmigration.resx">
+      <DependentUpon>201310081706526_autoinitmigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

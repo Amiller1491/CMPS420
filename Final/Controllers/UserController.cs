@@ -10,27 +10,28 @@ using System.Web.Helpers;
 
 namespace Final.Controllers
 {
-    [Authorize(Roles= "Admin")]
+    [Authorize(Roles= "Head")]
     public class UserController : Controller
     {
           
-        private UATContext db = new UATContext();
+        private ScheduleContext db = new ScheduleContext();
 
         //
         // GET: /User/
         
         public ActionResult Index()
         {
-            var user = db.User.Include(u => u.Role);
+            var user = db.User.Include(u => u.RoleModel);
             return View(user.ToList());
         }
 
         //
         // GET: /User/Details/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Details(int id = 0)
         {
             UserModel usermodel = db.User.Find(id);
+           
             if (usermodel == null)
             {
                 return HttpNotFound();
@@ -72,7 +73,7 @@ namespace Final.Controllers
 
         //
         // GET: /User/Create
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Create()
         {
             ViewBag.RoleID = new SelectList(db.Role, "RoleID", "Name");
@@ -114,7 +115,7 @@ namespace Final.Controllers
 
         //
         // POST: /User/Edit/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(UserModel usermodel)
@@ -131,7 +132,7 @@ namespace Final.Controllers
 
         //
         // GET: /User/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Head")]
         public ActionResult Delete(int id = 0)
         {
             UserModel usermodel = db.User.Find(id);

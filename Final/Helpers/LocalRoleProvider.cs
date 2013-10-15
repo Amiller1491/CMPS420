@@ -29,7 +29,7 @@ namespace Final.Helpers
             if (!repository.RoleExists(role))
                 return false;
 
-            return user.Role.Name == role.Name;
+            return user.RoleModel.Name == role.Name;
             //throw new NotImplementedException();
         }
 
