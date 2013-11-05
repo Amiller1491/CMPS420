@@ -2,9 +2,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-</br>
-</br>
-
 
 
 <div class="hero-unit" style="text-align:center">
@@ -23,6 +20,7 @@
             }
               */
         //Calendar
+        <div class="scrollWrapper">
         <table class="calendar table table-bordered">
     <thead>
         <tr>
@@ -246,10 +244,11 @@
        
     </tbody>
 </table>
+            </div>
         
         
         
-        
+        /*
             
             if (User.IsInRole("Head")){
                  
@@ -265,6 +264,7 @@
                 <!--<h2> You are an Assistant</h2>-->
             }
              
+         */
     
             <!--
                 <br />
@@ -289,19 +289,64 @@
 
 </div>
 <div class="row-fluid">
-                <div class="span5">
-                    <h2>Notifications</h2>
-                    <p>This is where your notifications can go.</p>
-                    <p><a class="btn" href="#">View Details >></a></p>
+                <div class="span6">
+                    <div class="alert alert-info">
+                    <h2>Schedules</h2>
+
+                    <table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered">
+                        <tr>
+                            <th>Coordinator</th>
+                            <th>Ready?</th>
+                        </tr>
+                       
+                      
+                            <tr>
+                                <td>Coordinator 1</td>
+                                <td><button class="btn btn-mini btn-danger" disabled="disabled">No</button></td>
+                            </tr>
+                        <tr>
+                                <td>Coordinator 2</td>
+                            <td><a href="#" class="btn btn-mini btn-success">Yes</a></td>
+                            </tr>
+                        <tr>
+                                <td>Coordinator 3</td>
+                            <td><button class="btn btn-mini btn-danger" disabled="disabled">No</button></td>
+                            </tr>
+                            
+                        </table>
+        
                 </div>
-                <div class="span2">
+                    </div>
+                <div class="span6" >
+                    <div class="alert alert-error">
+                    <h2>Alerts</h2>
+                    
+                    <table class="table tbody table-striped tbody table-hover tbody tr:hover table-bordered">
+                        <tr>
+                            <th>Coordinator</th>
+                            <th>Course</th>
+                            <th>Conflict</th>
+                            <th>View</th>
+                        </tr>
+                       
+                      
+                            <tr>
+                                <td>Coordinator 1</td>
+                                <td>CMPS 470</td>
+                                <td>2:00-3:15</td>
+                                <td><a href="#" class="btn btn-mini btn-success">Resolve</a</td>
+                            </tr>
+                        <tr>
+                                <td>Coordinator 1</td>
+                                <td>CMPS 570</td>
+                                <td>2:00-3:15</td>
+                                <td><a href="#" class="btn btn-mini btn-success">Resolve</a</td>
+                            </tr>
+                            
+                        </table>
 
                 </div>
-                <div class="span2">
-                    <h2>Alerts</h2>
-                    <p>This is where your alerts can go.</p>
-                    <p><a class="btn" href="#">View Details >></a></p>
-                </div>
+                    </div>
 </div>       
 
 
