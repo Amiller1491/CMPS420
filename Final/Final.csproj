@@ -145,18 +145,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\LocalRoleProvider.cs" />
-    <Compile Include="Migrations\201310080413104_10.7.13.cs" />
-    <Compile Include="Migrations\201310080413104_10.7.13.Designer.cs">
-      <DependentUpon>201310080413104_10.7.13.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201310081706526_autoinitmigration.cs" />
-    <Compile Include="Migrations\201310081706526_autoinitmigration.Designer.cs">
-      <DependentUpon>201310081706526_autoinitmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201310150402233_10.14.13.cs" />
-    <Compile Include="Migrations\201310150402233_10.14.13.Designer.cs">
-      <DependentUpon>201310150402233_10.14.13.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModel.cs">
       <SubType>Code</SubType>
@@ -638,17 +626,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201310080413104_10.7.13.resx">
-      <DependentUpon>201310080413104_10.7.13.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201310081706526_autoinitmigration.resx">
-      <DependentUpon>201310081706526_autoinitmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201310150402233_10.14.13.resx">
-      <DependentUpon>201310150402233_10.14.13.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

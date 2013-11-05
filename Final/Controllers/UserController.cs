@@ -89,7 +89,7 @@ namespace Final.Controllers
         {
             if (ModelState.IsValid)
             {
-                usermodel.Password = Crypto.HashPassword(usermodel.Password);
+                //usermodel.Password = Crypto.HashPassword(usermodel.Password);
                 db.User.Add(usermodel);
                 db.SaveChanges();
                 return RedirectToAction("Index");

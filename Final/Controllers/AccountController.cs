@@ -144,7 +144,8 @@ namespace Final.Controllers
                 if (user != null)
                 {
                     // if (user.Password == crytpo.Compute(password, user.PasswordSalt))
-                    if (Crypto.VerifyHashedPassword(user.Password, password))
+                   //if (Crypto.VerifyHashedPassword(user.Password, password))
+                    if(user.Password == password)
                     {
                         isValid = true;
                     }

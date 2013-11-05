@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Final.Controllers
 {
+    [Authorize(Roles = "Head")]
     public class HomeController : Controller
     {
         //

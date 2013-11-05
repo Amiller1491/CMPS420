@@ -6,7 +6,87 @@
 
     <style media="screen" type="text/css">
 
-        /* styles for layout */
+        
+        table.calendar {
+    margin-bottom: 0;
+}
+
+table.calendar > thead > tr > th {
+    text-align: center;
+}
+
+table.calendar > tbody > tr > td {
+    height: auto;
+}
+
+table.calendar > tbody > tr > td > div {
+    padding: 8px;
+    height: auto;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+}
+
+table.calendar > tbody > tr > td.has-events {
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 4px;
+}
+
+table.calendar > tbody > tr > td.has-events > div {
+    background-color: #08C;
+    border-left: 1px solid white;
+}
+
+table.calendar > tbody > tr > td.has-events > div:first-child {
+    border-left: 0;
+    margin-left: 1px;
+}
+
+table.calendar > tbody > tr > td.has-events > div.practice {
+    opacity: 0.7;
+}
+table.calendar > tbody > tr > td.conflicts > div > span.title {
+    color: red;
+}
+table.calendar > tbody > tr > td.max-conflicts > div {
+    background-color: red;
+    color: white;
+}
+
+table.calendar > tbody > tr > td.has-events > div > span {
+    display: block;
+    text-align: center;
+}
+table.calendar > tbody > tr > td.has-events > div > span a {
+    color: white;
+}
+
+table.calendar > tbody > tr > td.has-events > div > span.title {
+    font-weight: bold;
+}
+
+table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > td {
+    border: 0;
+}
+
+.table tbody tr.hover td, .table tbody tr.hover th {
+    background-color: whiteSmoke;
+}
+       
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+
+     
+    
+ /*      
         html,body
         {
             height:100%;
@@ -20,18 +100,18 @@
         #main
         {
             overflow:auto;
-            padding-bottom:150px; /* this needs to be bigger than footer height*/
+            padding-bottom:150px; 
         }
  
         .footer 
         {
             position: relative;
-            margin-top: -150px; /* negative value of footer height */
+            margin-top: -150px; 
             height: 150px;
             clear:both;
             padding-top:20px;
             color:#fff;
-        } 
+        } */
 
 </style>
 
@@ -84,13 +164,6 @@
                 <li>
                     <a href ="#contact">Contact</a>
                 </li>
-                <li>
-                    <select name="account">
-                        <option value="Sebastian van Delden">Department Head</option>
-                        <option value="John Roy Bonette">Undergraduate Coordinator</option>
-                        <option value="local user">Restricted Access User</option>
-                    </select>
-                </li>
 
              @* //this is how you filter the role in razor:RABIN
                 @if (User.IsInRole("Head"))
@@ -99,7 +172,7 @@
               }*@
                 
               
-              @if (User.Identity.IsAuthenticated)
+            @*  @if (User.Identity.IsAuthenticated)
               {
                   if (User.IsInRole("Head"))
                   {
@@ -130,7 +203,7 @@
                       //<li><a class="hover" href="~/Project/Index"> Project</a></li>
                   }
               
-              }
+              }*@
 
 
             </ul>
@@ -164,164 +237,45 @@
 </body>
 
     <div id="wrap">
-<div id="main" class="container-fluid clear-top">
-    <div class="row-fluid"> 
-        <div class="span3">
+<div id="main" class="container-fluid">
+         <div class="row-fluid"> 
+ @if (User.Identity.IsAuthenticated){
+          <div class="span3">
             <div class ="well sidebar-nav">
                 <ul class="nav nav-list">
-                    <li class="nav-header">Header</li>
-                    <li class="active">
-                        <a href="#">Link</a>
+                    <li class="nav-header"></li>
+                    @if (User.IsInRole("Head")){
+                    <li>
+                        <a class="hover" href="~/User/Index">Coordinators</a>
+                    </li>
+                    }
+                    <li>
+                        <a class="hover" href="~/Department/Index">Departments</a>
                     </li>
                     <li>
-                        <a href="#">Link</a>
+                        <a class="hover" href="~/Teacher/Index">Teachers</a>
                     </li>
                     <li>
-                        <a href="#">Link</a>
+                        <a class="hover" href="~/Semester/Index">Semesters</a>
                     </li>
                     <li>
-                        <a href="#">Link</a>
+                        <a class="hover" href="~/Course/Index">Courses</a>
                     </li>
                     <li>
-                        <a href="#">Link</a>
-                    </li>
-                    <li class="nav-header">Header</li>
-                    <li>
-                        <a href="#">Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Link</a>
-                    </li>
-                    <li>
-                        <a href="#">Link</a>
+                        <a class="hover" href="~/Room/Index">Rooms</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="span9">
+        <div class="span9" data-spy="scroll">
             @RenderBody() 
-            <div class="row-fluid">
-                <div class="span4">
-                    <h2>Notifications</h2>
-                    <p>This is where your notifications can go.</p>
-                    <p><a class="btn" href="#">View Details >></a></p>
-                </div>
-                <div class="span4">
-                    <h2>Alerts</h2>
-                    <p>This is where your alerts can go.</p>
-                    <p><a class="btn" href="#">View Details >></a></p>
-                </div>
-            </div> 
-            <div class="span4">
-                    <h2>Calender</h2>
-                    <table border="1" width="1000">
-                        <tr>
-                            <td>Times</td>
-                            <td>Monday</td>
-                            <td>Tuesday</td>
-                            <td>Wednesday</td>
-                            <td>Thursday</td>
-                        </tr>
-                        <tr>
-                            <td>8:00 am</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>9:00 am</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>10:00 am</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>11:00 am</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>12:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>1:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>2:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>3:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>4:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>5:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>6:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>7:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>8:00 pm</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
-                </div>      
         </div>
+ }
+ else{
+     <div class ="span12">
+         @RenderBody()
+     </div>
+ }
     </div>
 </div>
 </div>
