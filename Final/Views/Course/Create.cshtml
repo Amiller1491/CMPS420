@@ -58,35 +58,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Meeting_Pattern)
+            Meeting Pattern
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Meeting_Pattern)
-            @Html.ValidationMessageFor(model => model.Meeting_Pattern)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Mtg_Start)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Mtg_Start)
-            @Html.ValidationMessageFor(model => model.Mtg_Start)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Mtg_End)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Mtg_End)
-            @Html.ValidationMessageFor(model => model.Mtg_End)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CLass_Stat)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CLass_Stat)
-            @Html.ValidationMessageFor(model => model.CLass_Stat)
+            @Html.DropDownList("MeetingPatternID", String.Empty)
+            @Html.ValidationMessageFor(model => model.MeetingPatternID)
         </div>
 
         <p>

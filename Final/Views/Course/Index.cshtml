@@ -28,16 +28,7 @@
             @Html.DisplayNameFor(model => model.Total_Enroll)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Meeting_Pattern)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mtg_Start)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mtg_End)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CLass_Stat)
+            Meeting Pattern
         </th>
         <th>Actions</th>
     </tr>
@@ -60,16 +51,7 @@
             @Html.DisplayFor(modelItem => item.Total_Enroll)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Meeting_Pattern)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mtg_Start)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mtg_End)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CLass_Stat)
+            @Html.DisplayFor(modelItem => item.MeetingPatternModel.Name)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Class_Nbr }, new { @class="btn btn-mini"}) |

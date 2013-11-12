@@ -131,6 +131,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="Models\EmailModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\MeetingPatternModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Models\RoleModel.cs" />
     <Compile Include="Models\RoomModel.cs" />
@@ -612,6 +614,7 @@
     <Content Include="Views\Department\Create.cshtml" />
     <Content Include="Views\Department\Edit.cshtml" />
     <Content Include="Views\Department\Delete.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

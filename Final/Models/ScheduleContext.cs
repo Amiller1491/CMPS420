@@ -34,7 +34,7 @@ namespace Final.Models
         public DbSet<TestCaseModel> TestCase { get; set; }
         public DbSet<UATModel> UAT { get; set; }
         public DbSet<UserModel> User { get; set; }
-
+        public DbSet<MeetingPatternModel> MeetingPattern { get; set; }
         public DbSet<SemesterModel> Semester { get; set; }
     }
 }

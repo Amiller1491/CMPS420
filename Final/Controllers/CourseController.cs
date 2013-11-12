@@ -39,6 +39,7 @@ namespace Final.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.MeetingPatternID = new SelectList(db.Course, "MeetingPatternID", "Name");
             return View();
         }
 
@@ -54,7 +55,8 @@ namespace Final.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.MeetingPatternID = new SelectList(db.Course, "MeetingPatternID", "Name", coursemodel.MeetingPatternID);
+            //ViewBag.MeetingPatternID = new SelectList(db.Course, "MeetingPatternID", "Name", coursemodel.MeetingPatternModel.MeetingPatternID);
             return View(coursemodel);
         }
 
