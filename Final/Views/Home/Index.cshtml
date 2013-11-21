@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="hero-unit" style="text-align:center">
 
     @if(User.Identity.IsAuthenticated){
@@ -19,7 +20,7 @@
             }
               */
         //Calendar
-        <div class="scrollWrapper">
+        //<div class="scrollWrapper">
         <table class="calendar table table-bordered">
     <thead>
         <tr>
@@ -126,29 +127,19 @@
         <tr>
             <td>2:00</td>
 
-            <td class="max-conflicts" rowspan="1">
+            <td class=" has-events" rowspan="1">
                 <div class="row-fluid practice" style="width:90%; height:100%;">
                     <span class="title">CMPS 470</span>
                     <span class="location">Fayard 213</span>
                     <span class="time">2:00-3:15</span>
                 </div>
-                <div class="row-fluid practice" style="width:90%; height:100%;">
-                    <span class="title">CMPS 570</span>
-                    <span class="location">Fayard 213</span>
-                    <span class="time">2:00-3:15</span> 
-                    </div>
             </td>
 
             <td class=" no-events" rowspan="1"></td>
 
-            <td class=" max-conflicts" rowspan="1">
+            <td class=" has-events" rowspan="1">
                 <div class="row-fluid practice" style="width:90%; height:100%;">
                     <span class="title">CMPS 470</span>
-                    <span class="location">Fayard 213</span>
-                    <span class="time">2:00-3:15</span>
-                </div>
-                <div class="row-fluid practice" style="width:90%; height:100%;">
-                    <span class="title">CMPS 570</span>
                     <span class="location">Fayard 213</span>
                     <span class="time">2:00-3:15</span>
                 </div>
@@ -253,7 +244,7 @@
        
     </tbody>
 </table>
-            </div>
+            //</div>
         
         
         
@@ -299,6 +290,7 @@
 </div>
 <div class="row-fluid">
                 <div class="span6">
+                    <div class="slide" style="cursor: pointer;">Schedule (click to see)</div> <div class="view">
                     <div class="alert alert-info">
                     <h2>Schedules</h2>
 
@@ -327,6 +319,7 @@
                 </div>
                     </div>
                 <div class="span6" >
+                    <div class="slide1" style="cursor: pointer;">Alerts (click to see)</div> <div class="view1">
                     <div class="alert alert-error">
                     <h2>Alerts</h2>
                     
@@ -340,15 +333,13 @@
                        
                       
                             <tr>
-                                <td>Van Delden</td>
+                                <td>Coordinator 1</td>
                                 <td>CMPS 470</td>
                                 <td>2:00-3:15</td>
                                 <td><a href="#" class="btn btn-mini btn-success">Resolve</a</td>
-
                             </tr>
-
                         <tr>
-                                <td>Van Delden</td>
+                                <td>Coordinator 1</td>
                                 <td>CMPS 570</td>
                                 <td>2:00-3:15</td>
                                 <td><a href="#" class="btn btn-mini btn-success">Resolve</a</td>
@@ -358,22 +349,12 @@
 
                 </div>
                     </div>
+                </div>
+</div>       
 
 
 
 
 
-<div id="ErrorResolve" class="modal hide fade">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    <h3>Modal header</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#" class="btn">Close</a>
-    <a href="#" class="btn btn-primary">Save changes</a>
-  </div>
-</div>
+
 

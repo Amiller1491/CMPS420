@@ -144,8 +144,24 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/Content/icons/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/Content/icons/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="~/Content/icons/apple-touch-icon-57-precomposed.png">
-
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('div.view').hide();
+            $('div.slide').click(function() {
+                $('div.view').slideToggle(400);
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div.view1').hide();
+            $('div.slide1').click(function () {
+                $('div.view1').slideToggle(400);
+                return false;
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -164,7 +180,6 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
             <ul class="nav">
                 <li class ="active">
                     <a href="#">Home</a>
-
                 </li>
                 <li>
                     <a href ="#about">About</a>
@@ -253,57 +268,23 @@ table.table-borderless > thead > tr > th, table.table-borderless > tbody > tr > 
                     @if (User.IsInRole("Head")){
                     <li>
                         <a class="hover" href="~/User/Index">Coordinators</a>
-                        <ul>
-                            <li>
-                                <i class="icon-plus-sign"></i><a href="~/User/Create"> Add</a>
-                            </li>
-                        </ul>
                     </li>
                     }
                     <li>
                         <a class="hover" href="~/Department/Index">Departments</a>
-                        <ul>
-                            <li>
-                                <i class="icon-plus-sign"></i><a href="~/Department/Create"> Add</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a class="hover" href="~/Teacher/Index">Teachers</a>
-                        <ul>
-                            <li>
-                                <i class="icon-plus-sign"></i><a href="~/Teacher/Create"> Add</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a class="hover" href="~/Semester/Index">Semesters</a>
-                        <ul>
-                            <li>
-                                <i class="icon-plus-sign"></i><a href="~/Semester/Create"> Add</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a class="hover" href="~/Course/Index">Courses</a>
-                        <ul>
-                            <li>
-                                <i class="icon-plus-sign"></i><a href="~/Course/Create"> Add</a>
-                            </li>
-                        </ul>
                     </li>
                     <li>
                         <a class="hover" href="~/Room/Index">Rooms</a>
-                        <ul>
-                            <li>
-                                <i class="icon-plus-sign"></i><a href="~/Room/Create"> Add</a>
-                            </li>
-                        </ul>
                     </li>
-                    <li>
-                    <a class="hover" href="~/Calendar/Index">Calendar</a>
-                    </li>
-                    <li>
                 </ul>
             </div>
         </div>
